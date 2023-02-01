@@ -1,18 +1,199 @@
-* {
+
+body {
     font-family:    Arial, Helvetica, sans-serif;
-    border-color: rgb(30,120,30);
-    display: flex;
-    border: 2px solid rgb(0,0,0);
+    background-color: rgb(160, 160, 255);
+    display: grid;
+    grid-template-rows: 10% auto;
+    justify-content: start;
+    min-width: 200px;
+}
+
+#container-perfil{
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(44,44,156,1) 35%, rgba(159,209,246,1) 87%, rgba(212,212,255,0.9920343137254902) 100%);
+    grid-column: 1/3;
+    
+  
+}
+
+.foto-perfil {
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 10px 0px 40px 10px;
+    float: left;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px,auto));
+    grid-gap: 5px;
+    height: 100%;
+    width:100%;
+    max-width: 100vw;
+    padding: 5px 3px 5px 3px;
+    position: absolute;
+}
+
+#container-perfil > h2 {
+    text-align: center;
+    padding-top: 100px;
+    color: rgba(255, 255, 255, 0.63);
+    position: sticky;
+}
+
+
+
+.profesional {
+   
+    background: rgb(109,25,130);
+    background: linear-gradient(87deg, rgba(109,25,130,1) 0%, rgb(115, 45, 165) 35%, rgba(175,25,171,0.4654236694677871) 100%);
+}
+
+
+.profesional-item{
+  
+   color: rgba(255,255,255,1);
+}
+
+.profesional-item> p{
+    background-color: rgba(255,255,255,.3);
+    padding-bottom: 5%;
+      
+}
+
+#lista-idiomas>li{
+    background-color: rgba(255,255,255,.3);
+      
 }
 
 #datos-personales {
-    background-color: rgb(100,30,150);
+    font-size: larger;
+    background: rgb(99,18,130);
+    background: linear-gradient(87deg, rgba(99,18,130,1) 0%, rgba(100,30,150,1) 35%, rgba(175,25,171,0.4654236694677871) 100%);
     color:rgb(230,230,230);
-    display:block;
+    width: 100%;
 }
+
+.personal-item{
+    background-color: rgba(255,255,255,.5);
+    text-decoration: dashed;
+}
+
+
 
 #contactos{
     background-color: rgba(40, 30, 140, 0.785);
     color:rgb(255, 255, 255);
+    width: 100%;
+    grid-column: 1/3;
+    
+}
+
+
+#contactos>h4{
+    text-align: center;
+}
+
+#icon-bar{
+    text-align: center;
+}
+
+#icon-bar>a{
+    font-size: 40px;
+    visibility: hidden;
+    
+}
+
+#icon-bar>a:hover{
+    font-size: 60px;
+    transition: font-size .5s;
+    cursor: pointer;
+}
+
+
+
+.contact-item:hover{
+    background-color: rgba(255,255,255,0.3);
+    height: 30%;
+    text-decoration-line: underline;
+    transition: text-decoration-line 2s;
+ }
+
+@media (min-width:721px){
+    
+    .profesional-item{
+        font-size: x-large;
+       
+    }
+ 
+    .contact-item{
+        font-size: x-large;
+    }
+}
+
+
+
+@media (max-width: 720px){
+    main > h2 {
+        position: absolute;
+        padding: 10% 0px 0px 50%;
+        
+    }
+    .profesional{
+        grid-column: 1/3;
+        width: 100%;
+        grid-row: 3/4;
+    }
+    #datos-personales{
+        grid-column: 1/3;
+        width: 100%;
+        grid-row: 2/3;
+    }
+ 
+
+    #contactos{
+        flex-direction: column;
+        align-items: baseline;
+        
+    }
+
+    #icon-bar>a{
+        visibility: visible;
+    }
+
+    #scroll-container{
+        display: block;
+        height: 20%;
+        width: fit-content;
+        margin: 0 auto;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        
+    }
+
+    #scroll-container::-webkit-scrollbar {
+        width: 1px;    
+        height: 1px;   
+        display: none;  /* Ocultar scroll */
+    }
+
+    .contact-item{
+
+        display: flex;
+        align-items: center;
+        font-size: large;
+        padding: 5% 0 5% 0;
+        margin: 2% 0 2% 0;
+    }
+
+    .contact-item:hover{
+        background-color: rgba(255,255,255,0.3);
+        height: auto;
+        text-decoration-line: none;
+        transition: background-color 1s;
+     }
+
     
 }
